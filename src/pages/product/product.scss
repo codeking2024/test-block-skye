@@ -1,0 +1,135 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text-color);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+
+      .editBtn {
+        padding: 8px 16px;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: var(--accent-hover);
+        }
+      }
+
+      .backBtn {
+        padding: 8px 16px;
+        background: var(--bg-soft);
+        border: 1px solid var(--border);
+        color: var(--text-color);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: var(--bg-hover);
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    gap: 30px;
+
+    .productImage {
+      flex: 0 0 300px;
+
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+      }
+    }
+
+    .productInfo {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .infoGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        label {
+          font-weight: 600;
+          color: var(--text-soft);
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        span {
+          font-size: 16px;
+          color: var(--text-color);
+          padding: 8px 0;
+
+          &.inStock {
+            color: #4caf50;
+            font-weight: 500;
+          }
+
+          &.outOfStock {
+            color: #f44336;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .product {
+    .header {
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+
+      .actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    .content {
+      flex-direction: column;
+
+      .productImage {
+        flex: none;
+        align-self: center;
+        width: 250px;
+      }
+    }
+  }
+}
